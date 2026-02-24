@@ -8,7 +8,7 @@ from openai import AsyncOpenAI
 if TYPE_CHECKING:
     from models import Class, DataProperty, ObjectProperty
 
-INSTRUCTIONS = """You are given a WikiBase KG property or class and its typical connections. Produce a concise summary optimized for embeddings and vector search: define what it is, note key relationships, and use clear, retrieval-friendly terms. The summary should be a paragraph optimized for retrieval. If you encounter abbreviations, dont try to expand them, if not explicitly defined in your input. The goal is not to name relations, but given the relations, describe what they mean in a way that is easy to understand and use for retrieval."""
+INSTRUCTIONS = """You are given a WikiBase KG property or class and its typical connections. Produce a concise summary optimized for embeddings and vector search: define what it is, note key relationships, and use clear, retrieval-friendly terms. The summary should be a paragraph optimized for retrieval. If you encounter abbreviations, dont try to expand them, if not explicitly defined in your input. The goal is not to name relations, but given the relations, describe what they mean in a way that is easy to understand and use for retrieval. You can include examples, but only if you are certain that they are correct and relevant."""
 
 CLASS_TEMPLATE = """
 Class: {name}
@@ -77,6 +77,7 @@ async def augment_description(
             model=model,
             instructions=INSTRUCTIONS,
             input=input,
+            reasoning={"effort": "minimal"},
         )
         return response.output_text
 
