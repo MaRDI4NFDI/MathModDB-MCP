@@ -111,14 +111,17 @@ ontology = MathModDBStructure.from_wikibase(
     cache_dir=BASE_DIR / ".graph",
 )
 kg = KnowledgeGraph(endpoint=MATHMODDB_WIKIBASE_ENDPOINT)
+
+# Initialize embedders
 embedder = OpenAIEmbedder()
+multivector_embedder = ColBERTEmbedder()
 
 # Initialize vector database store
 store = QDrantStore(
     db_path=BASE_DIR / "mathmoddb_store",
     ontology=ontology,
     dense_embedder=embedder,
-    multivector_embedder=ColBERTEmbedder(),
+    multivector_embedder=multivector_embedder,
 )
 
 # Initialize FastMCP app
@@ -126,16 +129,8 @@ icon = Image(path=BASE_DIR / "assets/icon.png")
 app = FastMCP(
     "MathModDB",
     version="0.1.0",
-    description="MathModDB MCP Server to explore and query the MathModDB knowledge graph.",
     website_url="https://github.com/MaRDI4NFDI/MathModDB-MCP",
-    tags={
-        "ontology",
-        "discovery",
-        "exploration",
-        "search",
-        "mathematical modeling",
-    },
-    icon=[
+    icons=[
         Icon(src=icon.to_data_uri(), mimeType="image/png", sizes=["96x96"]),
     ],
 )
@@ -242,8 +237,12 @@ if __name__ == "__main__":
     args = argparse.ArgumentParser()
     args.add_argument("--port", type=int, default=8000)
     args.add_argument("--host", type=str, default="0.0.0.0")
-
+    args.add_argument("--dry-run", action="store_true")
     args = args.parse_args()
+
+    if args.dry_run:
+        print("Dry run complete")
+        exit(0)
 
     host = args.host
     port = args.port
