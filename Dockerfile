@@ -26,6 +26,13 @@ RUN --mount=type=secret,id=OPENAI_API_KEY \
     OPENAI_API_KEY="$(cat /run/secrets/OPENAI_API_KEY)" \
     uv run mathmoddb init
 
+COPY assets/ ./assets/
+
+# Run a dry-run to ensure embedding models are loaded
+RUN --mount=type=secret,id=OPENAI_API_KEY \
+    OPENAI_API_KEY="$(cat /run/secrets/OPENAI_API_KEY)" \
+    uv run python main.py --dry-run
+
 # Set the entry point
 CMD ["uv", "run", "fastmcp", "run", "main.py", \
      "--host", "0.0.0.0", \
