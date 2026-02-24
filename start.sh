@@ -15,6 +15,7 @@ done
 
 DOCKER_BUILDKIT=1 docker build \
   --secret id=OPENAI_API_KEY,env=OPENAI_API_KEY \
+  --no-cache \
   -t mathmoddb-mcp \
   .
 
