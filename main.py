@@ -5,6 +5,8 @@ from typing import Annotated, Dict
 import nest_asyncio
 from dotenv import load_dotenv
 from fastmcp import FastMCP
+from fastmcp.utilities.types import Image
+from mcp.types import Icon
 from toon_format import encode
 
 from src.embedder import ColBERTEmbedder, OpenAIEmbedder
@@ -120,7 +122,23 @@ store = QDrantStore(
 )
 
 # Initialize FastMCP app
-app = FastMCP("MathModDB")
+icon = Image(path=BASE_DIR / "assets/icon.png")
+app = FastMCP(
+    "MathModDB",
+    version="0.1.0",
+    description="MathModDB MCP Server to explore and query the MathModDB knowledge graph.",
+    website_url="https://github.com/MaRDI4NFDI/MathModDB-MCP",
+    tags={
+        "ontology",
+        "discovery",
+        "exploration",
+        "search",
+        "mathematical modeling",
+    },
+    icon=[
+        Icon(src=icon.to_data_uri(), mimeType="image/png", sizes=["96x96"]),
+    ],
+)
 
 
 @app.tool(
