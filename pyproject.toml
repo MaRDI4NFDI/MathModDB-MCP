@@ -39,4 +39,3 @@ include = ["/src", "/README.md", "/pyproject.toml"]
 
 [tool.uv]
 package = true
-prerelease = "allow"
