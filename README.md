@@ -10,6 +10,8 @@ MathModDB MCP server for semantic ontology exploration and SPARQL querying.
 
 The server runs as `streamable-http` on port `8000` by default.
 
+> See the MCP server in action in this [example chat](https://claude.ai/share/86fada5a-b881-4786-94c7-bc68a4ac884f)
+
 ## Requirements
 
 - Python `3.12+` (for local runs)
