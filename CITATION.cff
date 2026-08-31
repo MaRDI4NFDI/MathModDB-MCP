@@ -34,4 +34,8 @@ keywords:
 license: GPL-3.0-only
 version: "0.1.0"
 date-released: "2026-02-24"
+identifiers:
+  - description: Open Science Release of MathModDB
+    type: doi
+    value: "10.5281/zenodo.22207787"
 
