@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+title: MathModDB MCP Server
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: "Jan"
+    family-names: "Range"
+    affiliation: "Mathematical Research Data Initiative (MaRDI)"
+    orcid: "https://orcid.org/0000-0001-6478-1051"
+  - given-names: "Björn"
+    family-names: "Schembera"
+    affiliation: "Mathematical Research Data Initiative (MaRDI)"
+    orcid: "https://orcid.org/0000-0003-2860-6621"
+repository-code: "https://github.com/MaRDI4NFDI/MathModDB-MCP"
+url: "https://github.com/MaRDI4NFDI/MathModDB-MCP"
+abstract: >-
+  MathModDB MCP server for semantic ontology exploration and
+  SPARQL querying. Provides tools for schema discovery
+  (Explore_Ontology), single SPARQL query execution
+  (SPARQL_Query), and batch SPARQL query execution
+  (Batch_SPARQL_Query) against the MathModDB knowledge graph.
+keywords:
+  - MathModDB
+  - MCP
+  - Model Context Protocol
+  - ontology
+  - knowledge graph
+  - SPARQL
+  - MaRDI
+  - mathematical models
+  - Wikidata
+license: GPL-3.0-only
+version: "0.1.0"
+date-released: "2026-02-24"
+
