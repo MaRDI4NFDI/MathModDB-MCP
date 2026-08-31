@@ -32,7 +32,7 @@ keywords:
   - mathematical models
   - Wikidata
 license: GPL-3.0-only
-version: "0.1.0"
+version: "0.2.0"
 date-released: "2026-02-24"
 identifiers:
   - description: Open Science Release of MathModDB MCP
