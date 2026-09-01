@@ -7,11 +7,11 @@ type: software
 authors:
   - given-names: "Jan"
     family-names: "Range"
-    affiliation: "Mathematical Research Data Initiative (MaRDI)"
+    affiliation: "University of Stuttgart"
     orcid: "https://orcid.org/0000-0001-6478-1051"
   - given-names: "Björn"
     family-names: "Schembera"
-    affiliation: "Mathematical Research Data Initiative (MaRDI)"
+    affiliation: "University of Stuttgart; Mathematical Research Data Initiative (MaRDI)"
     orcid: "https://orcid.org/0000-0003-2860-6621"
 repository-code: "https://github.com/MaRDI4NFDI/MathModDB-MCP"
 url: "https://github.com/MaRDI4NFDI/MathModDB-MCP"
@@ -38,4 +38,3 @@ identifiers:
   - description: Open Science Release of MathModDB MCP
     type: doi
     value: "10.5281/zenodo.22207787"
-
