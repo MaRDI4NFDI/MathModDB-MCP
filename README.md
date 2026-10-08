@@ -76,3 +76,12 @@ After the server is running at `http://127.0.0.1:8000/mcp`, add this MCP entry i
 
 - Node.js / npm available locally (for `npx`)
 - `mcp-remote` runnable via `npx`
+
+
+## Evaluation
+
+A structured evaluation suite is available at this repo: https://github.com/JR-1991/MathModDB-ISWC-Evaluation
+
+## Related Work
+
+A paper describing the system architecture, the methodology and how the MathModDB-MCP helps to improve FAIR and XAIR mathematical research data can be found [here](https://arxiv.org/abs/2607.24512)
